@@ -6,9 +6,9 @@ Format:
 Food Name: Price
 '''
 
-import xml.etree.ElementTree as ET
+from defusedxml.ElementTree import parse
 
-tree = ET.parse('food.xml')
+tree = parse('food.xml')
 root = tree.getroot()
 
 for child in root.iter('food'):
